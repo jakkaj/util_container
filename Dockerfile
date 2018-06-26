@@ -6,12 +6,14 @@ RUN apt-get update
 
 
 RUN apt-get install openssh-server -y
-
 RUN apt-get install curl wget -y
+RUN apt-get install dnsutils -y
+RUN apt-get install iputils-ping -y
+RUN apt-get install nano -y
 
 RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
 RUN apt-get install -y nodejs
-RUN apt-get install iputils-ping
+
 
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 RUN mv kubectl /usr/local/bin
